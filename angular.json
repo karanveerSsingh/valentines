@@ -26,12 +26,13 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
-               "_redirects",
+              "src/_redirects",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
+
             "styles": [
               "src/styles.scss",
               "node_modules/animate.css/animate.min.css",
