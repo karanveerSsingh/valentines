@@ -1,8 +1,11 @@
 import { Component, ElementRef, OnInit, signal, ViewChild } from '@angular/core';
 import 'animate.css';
+import { CeleHappy } from '../cele-happy/cele-happy';
+import { Lines } from '../lines/lines';
+import { RoseDay } from '../rose-day/rose-day';
 @Component({
   selector: 'app-valentines-component',
-  imports: [],
+  imports: [CeleHappy, Lines, RoseDay],
   templateUrl: './valentines-component.html',
   styleUrl: './valentines-component.scss',
 })
@@ -15,6 +18,7 @@ export class ValentinesComponent implements OnInit {
   noButtonText = 'NO';
   isLastNoMessage = false;
   private noMessageIndex = 0;
+  showArrow = true;
   private noMessages = [
     'NO',
     'Are you sure?',
@@ -34,7 +38,7 @@ export class ValentinesComponent implements OnInit {
   ];
 
   ngOnInit() {
-    setTimeout(() => this.showScheme.set(true), 10_00);
+    setTimeout(() => this.showScheme.set(true), 30_00);
     this.heartList = Array(50)
       .fill(0)
       .map(() => ({
@@ -58,6 +62,13 @@ export class ValentinesComponent implements OnInit {
     this.noButtonText = this.noMessages[this.noMessageIndex];
     if (this.noMessageIndex === this.noMessages.length - 1) {
       this.isLastNoMessage = true;
+    }
+  }
+
+  onScroll(event: Event) {
+    const target = event.target as HTMLElement;
+    if (target.scrollTop > 50) {
+      this.showArrow = false;
     }
   }
 }

@@ -1,22 +1,8 @@
 <div class="valentine-container" #container>
-  <div class="heart-list-container">
-    <div class="heart-list-container">
-      @for (heart of heartList; track $index) {
-        <span
-          class="heart-text"
-          [style.left]="heart.left"
-          [style.animation-delay]="heart.animationDelay"
-          [style.font-size]="heart.fontSize"
-          >❤️</span
-        >
-      }
-    </div>
-  </div>
-
   @if (showScheme()) {
     @if (!isYesClicked) {
       <div class="card animate__animated animate__fadeIn" #card>
-        <p class="lover_name">Khush</p>
+        <p class="lover_name">Khushi</p>
         <div class="d-flex align-items-center content">
           <div class="details">
             <p>will you be my Valentine?</p>
@@ -36,11 +22,12 @@
         </div>
       </div>
     } @else {
-      <div class="second-card">
-        <p class="yey">❤️ Yay! ❤️</p>
-        <p class="happy">I'm so happy to be your Valentine!</p>
-        <img src="../../../../assets/dudu-dudu-bubu.gif" alt="" />
-        <p class="loveu">I Love You</p>
+      <div class="second-cards" (scroll)="onScroll($event)">
+        <app-cele-happy></app-cele-happy>
+        <!-- <div class="dashed-line"></div> -->
+        <app-lines></app-lines>
+        <app-rose-day></app-rose-day>
+        <div class="scroll-down-arrow" [class.hidden]="!showArrow"></div>
       </div>
     }
   }

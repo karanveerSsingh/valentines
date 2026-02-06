@@ -1,1 +1,30 @@
+<div class="heart-list-container">
+  <div class="heart-list-container">
+    @for (heart of heartList; track $index) {
+      <span
+        class="heart-text"
+        [style.left]="heart.left"
+        [style.animation-delay]="heart.animationDelay"
+        [style.font-size]="heart.fontSize"
+        >❤️</span
+      >
+    }
+    @for (bulb of bulbList; track $index) {
+      <span
+        class="bulb"
+        [style.left]="bulb.left"
+        [style.top]="bulb.top"
+        [style.animation-delay]="bulb.animationDelay"
+      ></span>
+    }
+    @for (star of starList; track $index) {
+      <span
+        class="star"
+        [style.left]="star.left"
+        [style.top]="star.top"
+        [style.animation-delay]="star.animationDelay"
+      ></span>
+    }
+  </div>
+</div>
 <router-outlet />
