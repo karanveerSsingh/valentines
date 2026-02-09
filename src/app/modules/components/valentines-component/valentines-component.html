@@ -37,18 +37,18 @@
                 {{ day.name }}
               </button>
             }
-            <!-- @if (day.show) { -->
-            <div class="w-100 gap-3 allcompo">
-              <app-rose-day *ngSwitchCase="'rose'"></app-rose-day>
-              <app-propose-day *ngSwitchCase="'propose'"></app-propose-day>
-              <app-chocolate-day *ngSwitchCase="'chocolate'"></app-chocolate-day>
-              <app-teddy-day *ngSwitchCase="'teddy'"></app-teddy-day>
-              <app-promise-day *ngSwitchCase="'promise'"></app-promise-day>
-              <app-hug-day *ngSwitchCase="'hug'"></app-hug-day>
-              <app-kiss-day *ngSwitchCase="'kiss'"></app-kiss-day>
-              <app-valentine-day *ngSwitchCase="'valentine'"></app-valentine-day>
-            </div>
-            <!-- } -->
+            @if (day.show) {
+              <div class="w-100 gap-3 allcompo">
+                <app-rose-day *ngSwitchCase="'rose'"></app-rose-day>
+                <app-propose-day *ngSwitchCase="'propose'"></app-propose-day>
+                <app-chocolate-day *ngSwitchCase="'chocolate'"></app-chocolate-day>
+                <app-teddy-day *ngSwitchCase="'teddy'"></app-teddy-day>
+                <app-promise-day *ngSwitchCase="'promise'"></app-promise-day>
+                <app-hug-day *ngSwitchCase="'hug'"></app-hug-day>
+                <app-kiss-day *ngSwitchCase="'kiss'"></app-kiss-day>
+                <app-valentine-day *ngSwitchCase="'valentine'"></app-valentine-day>
+              </div>
+            }
           </div>
         }
         <div class="scroll-down-arrow" [class.hidden]="!showArrow"></div>
