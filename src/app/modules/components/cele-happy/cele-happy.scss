@@ -3,55 +3,113 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin-top: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+
   .second-card {
     background-color: #fff;
-    padding: 40px 100px;
-    border-radius: 5px;
+    padding: 40px 60px;
+    border-radius: 10px;
     text-align: center;
     z-index: 9;
     font-family: 'Eagle Lake', serif;
     font-weight: 400;
     font-style: normal;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
     .yey {
-      font-size: 30px;
+      font-size: clamp(24px, 5vw, 30px);
+      margin-bottom: 15px;
     }
     .happy {
-      font-size: 20px;
+      font-size: clamp(16px, 3.5vw, 20px);
+      margin-bottom: 20px;
+      line-height: 1.4;
     }
     .loveu {
-      font-size: 40px;
+      font-size: clamp(28px, 6vw, 40px);
+      margin-top: 20px;
     }
   }
 }
 
-@media (width <= 576px) {
-  .second-card {
-    padding: 20px 30px;
-    .yey {
-      font-size: 20px;
-    }
-    .happy {
-      font-size: 15px;
-    }
-    .loveu {
-      font-size: 25px;
+// Small Mobile devices (up to 480px)
+@media (max-width: 480px) {
+  .cele {
+    padding: 15px;
+
+    .second-card {
+      padding: 25px 20px;
+      border-radius: 8px;
+
+      .yey {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .happy {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      .loveu {
+        font-size: 24px;
+        margin-top: 15px;
+      }
+
+      img {
+        margin: 15px 0;
+        max-width: 90%;
+      }
     }
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 1024px) {
-  .second-card {
-    padding: 20px 30px;
+// Mobile devices (481px to 576px)
+@media (min-width: 481px) and (max-width: 576px) {
+  .cele .second-card {
+    padding: 30px 25px;
+
     .yey {
-      font-size: 20px;
+      font-size: 22px;
     }
     .happy {
-      font-size: 20px;
+      font-size: 16px;
     }
     .loveu {
-      font-size: 30px;
+      font-size: 26px;
     }
+  }
+}
+
+// Tablet devices (577px to 1024px)
+@media (min-width: 577px) and (max-width: 1024px) {
+  .cele .second-card {
+    padding: 35px 40px;
+
+    .yey {
+      font-size: 26px;
+    }
+    .happy {
+      font-size: 18px;
+    }
+    .loveu {
+      font-size: 32px;
+    }
+  }
+}
+
+// Large screens (1025px and above)
+@media (min-width: 1025px) {
+  .cele .second-card {
+    padding: 40px 60px;
   }
 }
