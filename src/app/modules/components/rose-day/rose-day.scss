@@ -1,28 +1,33 @@
 .valentine-container {
-  background-color: #ffffff;
-  padding: 40px 100px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  margin-bottom: 300px;
-  margin-top: 200px;
-  .title {
-    color: #b92254;
-    .hey {
-      font-size: 36px;
-      font-family: 'Eagle Lake', serif;
-      font-weight: 400;
-      font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .cards-rose {
+    background-color: #ffffff;
+    padding: 40px 100px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+    .title {
+      color: #b92254;
+      .hey {
+        font-size: 36px;
+        font-family: 'Eagle Lake', serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .rose {
+        font-size: 48px;
+        font-family: 'Eagle Lake', serif;
+        font-weight: 400;
+        font-style: normal;
+      }
     }
-    .rose {
-      font-size: 48px;
-      font-family: 'Eagle Lake', serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-  }
-  .imgs {
-    .top-img {
-      width: 200px;
+    .imgs {
+      .top-img {
+        width: 200px;
+      }
     }
   }
 }
@@ -60,21 +65,23 @@
 /* Responsive Styles */
 @media (width <= 576px) {
   .valentine-container {
-    margin-top: 400px;
-    margin-bottom: 400px;
+    .cards-rose {
+      margin-top: 400px;
+      margin-bottom: 400px;
 
-    padding: 20px;
-    .title {
-      .hey {
-        font-size: 16px;
+      padding: 20px;
+      .title {
+        .hey {
+          font-size: 16px;
+        }
+        .rose {
+          font-size: 24px;
+        }
       }
-      .rose {
-        font-size: 24px;
-      }
-    }
-    .imgs {
-      .top-img {
-        width: 100px;
+      .imgs {
+        .top-img {
+          width: 100px;
+        }
       }
     }
   }

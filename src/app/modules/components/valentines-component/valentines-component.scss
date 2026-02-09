@@ -1,13 +1,20 @@
 .valentine-container {
-  height: 100vh;
-  width: 100%;
-  // background: linear-gradient(135deg, #ffd6e0, #ffeef3);
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  padding: 0 10px;
+  .vale-s {
+    height: 100vh;
+    width: 100%;
+    // background: linear-gradient(135deg, #ffd6e0, #ffeef3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+  }
 }
 
 @keyframes floatHearts {
@@ -116,16 +123,32 @@ button {
   }
 }
 .second-cards {
+  .all-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
   display: flex;
+  gap: 10px;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   position: relative;
   height: 100vh;
   overflow-y: auto;
   width: 100%;
-  gap: 20px;
-  // overflow-y: auto;
-  padding-top: 12%;
+  // padding-top: 100%;
+  .btn-day {
+    padding: 10px 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+    background: #ff4d6d;
+    color: white;
+  }
 }
 .dashed-line {
   width: 2px;

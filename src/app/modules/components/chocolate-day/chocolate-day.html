@@ -1,0 +1,55 @@
+<div class="chocolate-day">
+  <div class="background-animations">
+    @for (item of backgroundElements; track $index) {
+      <div
+        class="shape"
+        [class.heart]="$index % 3 === 0"
+        [class.chocolate-bar]="$index % 3 === 1"
+        [class.box]="$index % 3 === 2"
+        [style.left]="item.left"
+        [style.animation-delay]="item.animationDelay"
+        [style.animation-duration]="item.animationDuration"
+      ></div>
+    }
+  </div>
+
+  <div class="card" *ngIf="!isYesClicked">
+    <h1>Happy Chocolate Day 🍫</h1>
+    <p>Here's a chocolate for my beautiful lady ❤️</p>
+    <p>Will you be mine forever?</p>
+    <div class="buttons">
+      <button
+        class="yes"
+        (click)="onYesClick()"
+        [style.transform]="'scale(' + yesButtonScale + ')'"
+      >
+        YES ❤️
+      </button>
+      <button
+        class="no"
+        *ngIf="noClickCount < 6"
+        (click)="onNoClick()"
+        [style.transform]="'scale(' + noButtonScale + ')'"
+      >
+        NO 💔
+      </button>
+    </div>
+  </div>
+
+  <div class="card-response" *ngIf="isYesClicked">
+    <div class="chocolate-fall">
+      @for (choco of chocolateFall; track $index) {
+        <div
+          class="chocolate"
+          [style.left]="choco.left"
+          [style.animation-delay]="choco.animationDelay"
+          [style.animation-duration]="choco.animationDuration"
+        ></div>
+      }
+    </div>
+    <p>Here's a chocolate for my beautiful lady ❤️</p>
+    <p>— because just like chocolate, you make everything sweeter.</p>
+    <p>Every smile, every laugh, and every moment with you melts my heart a little more.</p>
+    <p>Happy Chocolate Day 🍫❤️</p>
+  </div>
+</div>

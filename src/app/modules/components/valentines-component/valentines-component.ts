@@ -1,11 +1,31 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, signal, ViewChild } from '@angular/core';
 import 'animate.css';
 import { CeleHappy } from '../cele-happy/cele-happy';
 import { Lines } from '../lines/lines';
 import { RoseDay } from '../rose-day/rose-day';
+import { ProposeDay } from '../propose-day/propose-day';
+import { ChocolateDay } from '../chocolate-day/chocolate-day';
+import { TeddyDay } from '../teddy-day/teddy-day';
+import { PromiseDay } from '../promise-day/promise-day';
+import { HugDay } from '../hug-day/hug-day';
+import { KissDay } from '../kiss-day/kiss-day';
+import { ValentineDay } from '../valentine-day/valentine-day';
 @Component({
   selector: 'app-valentines-component',
-  imports: [CeleHappy, Lines, RoseDay],
+  imports: [
+    CommonModule,
+    CeleHappy,
+    Lines,
+    RoseDay,
+    ProposeDay,
+    ChocolateDay,
+    TeddyDay,
+    PromiseDay,
+    HugDay,
+    KissDay,
+    ValentineDay,
+  ],
   templateUrl: './valentines-component.html',
   styleUrl: './valentines-component.scss',
 })
@@ -19,6 +39,19 @@ export class ValentinesComponent implements OnInit {
   isLastNoMessage = false;
   private noMessageIndex = 0;
   showArrow = true;
+
+  currentDate = new Date();
+  valentineDays = [
+    { name: 'Rose Day', date: 7, component: 'rose', show: false, past: false },
+    { name: 'Propose Day', date: 8, component: 'propose', show: false, past: false },
+    { name: 'Chocolate Day', date: 9, component: 'chocolate', show: false, past: false },
+    { name: 'Teddy Day', date: 10, component: 'teddy', show: false, past: false },
+    { name: 'Promise Day', date: 11, component: 'promise', show: false, past: false },
+    { name: 'Hug Day', date: 12, component: 'hug', show: false, past: false },
+    { name: 'Kiss Day', date: 13, component: 'kiss', show: false, past: false },
+    { name: 'Valentine Day', date: 14, component: 'valentine', show: false, past: false },
+  ];
+
   private noMessages = [
     'NO',
     'Are you sure?',
@@ -46,6 +79,26 @@ export class ValentinesComponent implements OnInit {
         animationDelay: Math.random() * 10 + 's',
         fontSize: Math.random() * 12 + 12 + 'px',
       }));
+    this.checkValentineDay();
+  }
+
+  checkValentineDay() {
+    const today = this.currentDate.getDate();
+    const month = this.currentDate.getMonth() + 1;
+
+    if (month === 2) {
+      this.valentineDays.forEach((day) => {
+        if (day.date < today) {
+          day.past = true;
+        } else if (day.date === today) {
+          day.show = true;
+        }
+      });
+    }
+  }
+
+  showDay(day: any) {
+    day.show = true;
   }
 
   playSound() {

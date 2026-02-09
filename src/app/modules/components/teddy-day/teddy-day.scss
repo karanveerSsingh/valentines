@@ -1,0 +1,69 @@
+.card-response {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+
+  .teddys {
+    background: #fff;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    color: #000;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+
+    h1 {
+      padding-bottom: 10px;
+      font-size: 2rem;
+      color: #e91e63;
+    }
+
+    img {
+      animation: teddy-bounce 2s infinite ease-in-out;
+      max-width: 150px;
+      width: 100%;
+      height: auto;
+    }
+
+    .subtitle {
+      padding-top: 10px;
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+}
+
+@keyframes teddy-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+// Media Query for mobile responsiveness
+@media (max-width: 768px) {
+  .card-response {
+    .teddys {
+      padding: 30px;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      img {
+        max-width: 120px;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 .heart-list-container {
-  background: #000033;
+  // background: #000033;
+  background: linear-gradient(135deg, #ffd6e0, #ffeef3);
 
   position: absolute;
   top: 0;
@@ -28,14 +29,15 @@
 
 .bulb {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #ffcc00;
+  // width: 4px;
+  // height: 4px;
+  font-size: 8px;
+  // background-color: #ff4d6d;
   border-radius: 50%;
   box-shadow:
-    0 0 10px #ffcc00,
-    0 0 20px #ffcc00,
-    0 0 30px #ffcc00;
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #fff;
   animation: blink 2s infinite;
 }
 

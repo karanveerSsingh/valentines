@@ -1,0 +1,17 @@
+<div class="promis">
+  <div class="content">
+    <h1 class="title">Happy Promise Day, Khushi ❤️</h1>
+    <!-- <div class="heart"></div> -->
+    <p class="subtitle" *ngIf="!showPromises">I promise to be your biggest supporter.</p>
+
+    <div class="promises" *ngIf="showPromises">
+      <ul>
+        <li *ngFor="let promise of promises">{{ promise }}</li>
+      </ul>
+    </div>
+
+    <button class="promise-btn" (click)="onShowPromisesClick()">
+      {{ showPromises ? 'Hide Promises' : 'Show My Promises' }}
+    </button>
+  </div>
+</div>
