@@ -5,13 +5,16 @@
     <p class="subtitle" *ngIf="!showPromises">I promise to be your biggest supporter.</p>
 
     <div class="promises" *ngIf="showPromises">
-      <ul>
-        <li *ngFor="let promise of promises">{{ promise }}</li>
-      </ul>
+      <div class="single-promise">
+        <p>{{ getCurrentPromise() }}</p>
+        <small class="promise-counter"
+          >Promise {{ currentPromiseIndex + 1 }} of {{ promises.length }}</small
+        >
+      </div>
     </div>
 
     <button class="promise-btn" (click)="onShowPromisesClick()">
-      {{ showPromises ? 'Hide Promises' : 'Show My Promises' }}
+      {{ getButtonText() }}
     </button>
   </div>
 </div>

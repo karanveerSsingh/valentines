@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PromiseDay {
   showPromises = false;
+  currentPromiseIndex = 0;
   promises = [
     'I promise to always be with you.',
     'I promise to make you smile, even on the toughest days.',
@@ -19,10 +20,34 @@ export class PromiseDay {
     'I promise to share my fries with you.',
     'I promise to always be honest with you.',
     'I promise to make you laugh every day.',
+    'I promise Muje se jitna hoga usse jyda khush rakhunga aapko.',
     'I promise to never stop loving you.',
   ];
 
   onShowPromisesClick() {
-    this.showPromises = !this.showPromises;
+    if (!this.showPromises) {
+      this.showPromises = true;
+      this.currentPromiseIndex = 0;
+    } else {
+      this.currentPromiseIndex++;
+      if (this.currentPromiseIndex >= this.promises.length) {
+        this.showPromises = false;
+        this.currentPromiseIndex = 0;
+      }
+    }
+  }
+
+  getCurrentPromise() {
+    return this.promises[this.currentPromiseIndex];
+  }
+
+  getButtonText() {
+    if (!this.showPromises) {
+      return 'Show My Promises';
+    } else if (this.currentPromiseIndex < this.promises.length - 1) {
+      return 'Next Promise';
+    } else {
+      return 'Finish';
+    }
   }
 }

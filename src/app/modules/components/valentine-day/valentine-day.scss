@@ -4,3 +4,131 @@
   align-items: center;
   height: 100vh;
 }
+.valentine-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #ff4e6a, #ff758c);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+}
+
+.title-1 {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  // margin-top: 100px;
+  padding: 20px 50px;
+  border-radius: 20px;
+  text-align: center;
+  // z-index: 9;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 5px 0 0;
+    font-size: 22px;
+  }
+}
+.chocolate-box {
+  right: -36px;
+  bottom: -12px;
+  position: absolute;
+  img {
+    width: 80px;
+    height: auto;
+  }
+}
+.paper-heart {
+  left: -70px;
+  z-index: 1;
+  top: -235px;
+  position: absolute;
+  img {
+    width: 550px;
+    height: auto;
+  }
+}
+
+/* Floating hearts */
+.hearts span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+  background-size: cover;
+  animation: float 10s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+  }
+}
+
+/* Random positions */
+.hearts span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+.hearts span:nth-child(2) {
+  left: 25%;
+  animation-delay: 2s;
+}
+.hearts span:nth-child(3) {
+  left: 40%;
+  animation-delay: 4s;
+}
+.hearts span:nth-child(4) {
+  left: 60%;
+  animation-delay: 1s;
+}
+.hearts span:nth-child(5) {
+  left: 75%;
+  animation-delay: 3s;
+}
+.hearts span:nth-child(6) {
+  left: 85%;
+  animation-delay: 5s;
+}
+
+@media (width <= 576px) {
+  .paper-heart {
+    img {
+      width: 445px;
+      height: auto;
+    }
+  }
+  .title-1 {
+    padding: 20px;
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 5px 0 0;
+      font-size: 22px;
+    }
+  }
+  .chocolate-box {
+    right: -28px;
+  }
+}

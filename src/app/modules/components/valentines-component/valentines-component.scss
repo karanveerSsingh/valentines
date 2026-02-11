@@ -130,7 +130,7 @@ button {
 
   .allcompo {
     width: 100%;
-    display: flex;
+    // display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
@@ -264,7 +264,7 @@ button {
         font-size: 17px;
       }
       .allcompo {
-        padding: 18px;
+        padding: 18px 0;
         margin: 18px 0;
       }
     }
