@@ -1,0 +1,118 @@
+@import '../../../shared/styles/valentine-shared.scss';
+
+/* Content Section Styles - Matching the "You + Me Forever" design */
+.content-section {
+  @include section-container;
+}
+
+.valentine-content {
+  @include valentine-content;
+}
+
+/* Floating hearts around the content */
+.floating-hearts {
+  @include hearts-container;
+}
+
+.floating-heart {
+  @include floating-heart;
+}
+
+.floating-heart:nth-child(1) {
+  top: 10%;
+  left: 10%;
+}
+.floating-heart:nth-child(2) {
+  top: 20%;
+  right: 10%;
+}
+.floating-heart:nth-child(3) {
+  bottom: 30%;
+  left: 5%;
+}
+.floating-heart:nth-child(4) {
+  bottom: 20%;
+  right: 15%;
+}
+.floating-heart:nth-child(5) {
+  top: 60%;
+  left: 15%;
+}
+.floating-heart:nth-child(6) {
+  top: 70%;
+  right: 5%;
+}
+
+/* Main title */
+.forever-title {
+  @include page-title;
+}
+
+/* Photo frame */
+.photo-frame {
+  @include photo-frame;
+}
+
+.heart-border {
+  @include heart-border;
+}
+
+.border-heart {
+  @include border-heart;
+}
+
+@include generate-border-hearts(20);
+
+.couple-photo {
+  @include couple-photo;
+}
+
+/* Love message */
+.love-message {
+  @include love-message;
+}
+
+.love-text {
+  @include love-text;
+}
+
+.love-details {
+  @include love-details;
+}
+
+/* Action buttons */
+.action-buttons {
+  @include action-buttons;
+}
+
+.click-me {
+  @include click-button;
+}
+
+.back-btn {
+  @include back-button;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .content-section {
+    padding: 20px;
+    height: 85vh;
+  }
+
+  .forever-title {
+    font-size: 36px;
+    font-family: 'Knewave', system-ui;
+    font-weight: 400;
+  }
+
+  .photo-frame {
+    width: 240px;
+    height: 170px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    // gap: 15px;
+  }
+}

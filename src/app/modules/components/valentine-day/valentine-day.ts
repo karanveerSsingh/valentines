@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LoveForeverComponent } from '../love-forever/love-forever';
+import { LoveLetterComponent } from '../love-letter/love-letter';
+import { CelebrationComponent } from '../celebration/celebration';
 
 @Component({
   selector: 'app-valentine-day',
-  imports: [CommonModule],
+  imports: [CommonModule, LoveForeverComponent, LoveLetterComponent, CelebrationComponent],
   templateUrl: './valentine-day.html',
   styleUrl: './valentine-day.scss',
 })

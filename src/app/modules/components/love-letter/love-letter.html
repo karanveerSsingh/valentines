@@ -1,0 +1,52 @@
+<div class="letter-section">
+  <!-- <span class="letter-heart-bg">
+    <img
+      src="../../../../assets/heart-garland-hand-drawn-border-frame-love-vector-removebg-preview.png"
+      alt=""
+    />
+  </span> -->
+  <div class="letter-content">
+    <!-- Floating hearts background -->
+    <div class="letter-hearts">
+      @for (heart of Array(10); track $index) {
+        <div class="letter-heart">💗</div>
+      }
+    </div>
+
+    <!-- Main title -->
+    <h1 class="heart-title">Heart 2 Heart ❤️</h1>
+
+    <!-- Love letter note -->
+    <div class="love-note">
+      <div class="note-header">
+        <div class="note-holes">
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+        </div>
+      </div>
+      <div class="note-content">
+        <p class="note-text">
+          To the love of my life,<br />
+          You make my life so meaningful<br />
+          and I am so lucky to have you<br />
+          as my valentine this year. I love<br />
+          you wholeheartedly and I Will<br />
+          try to love You More And More And <br />
+          More Baby Girl. I know I tell<br />
+          you this everyday but you are<br />
+          literally the most beautiful girl<br />
+          I know and I love you
+        </p>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="letter-actions">
+      <div class="click-me-letter" (click)="onCelebrate()">click Again Plzzzz!</div>
+      <div class="back-btn-letter" (click)="onGoBackToPhoto()">
+        <span>← Back</span>
+      </div>
+    </div>
+  </div>
+</div>

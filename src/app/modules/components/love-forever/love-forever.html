@@ -1,0 +1,47 @@
+<div class="content-section">
+  <div class="valentine-content">
+    <!-- Floating hearts -->
+    <div class="floating-hearts">
+      @for (heart of [1, 2, 3, 4, 5, 6]; track $index) {
+        <div class="floating-heart">🤍</div>
+      }
+    </div>
+
+    <!-- Main title -->
+    <h1 class="forever-title">You + Me Forever</h1>
+
+    <!-- Photo frame with heart border -->
+    <div class="photo-frame">
+      <div class="heart-border">
+        @for (
+          heart of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+          track $index
+        ) {
+          <span class="border-heart">❤️</span>
+        }
+      </div>
+      <div class="couple-photo">
+        <img src="../../../../assets/ourImg.jpeg" alt="Our Photo" />
+      </div>
+    </div>
+
+    <!-- Love message -->
+    <div class="love-message">
+      <p class="love-text">I love...</p>
+      <div class="love-details">
+        <p>1. your eyes</p>
+        <p>2. your smile</p>
+        <p>3. your laugh</p>
+        <p>4. your heart</p>
+      </div>
+    </div>
+
+    <!-- Click me and back button -->
+    <div class="action-buttons">
+      <div class="click-me" (click)="showLoveLetter()">click me!</div>
+      <div class="back-btn" (click)="goBackToBanner()">
+        <span>← Back to Banner</span>
+      </div>
+    </div>
+  </div>
+</div>

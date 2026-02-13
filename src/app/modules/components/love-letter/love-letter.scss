@@ -1,0 +1,96 @@
+@import '../../../shared/styles/valentine-shared.scss';
+
+/* Heart 2 Heart Letter Section */
+.letter-section {
+  @include section-container;
+}
+
+.letter-content {
+  @include valentine-content;
+}
+
+.letter-hearts {
+  @include hearts-container;
+}
+
+.letter-heart {
+  @include letter-heart;
+}
+
+@include generate-heart-positions(10, 'letter-heart');
+
+.heart-title {
+  @include page-title(42px);
+  margin-bottom: 30px;
+}
+
+.love-note {
+  @include love-note;
+}
+
+.note-header {
+  @include note-header;
+}
+
+.note-holes {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.hole {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff6b8a;
+  opacity: 0.6;
+}
+
+.note-content {
+  @include note-content;
+}
+
+.note-text {
+  @include note-text;
+}
+
+.letter-actions {
+  @include action-buttons;
+}
+
+.click-me-letter {
+  @include valentine-button;
+  z-index: 9999;
+}
+
+.back-btn-letter {
+  @include back-button;
+}
+
+/* Responsive design for letter */
+@media (max-width: 768px) {
+  .letter-section {
+    padding: 20px;
+    height: 85vh;
+  }
+
+  .heart-title {
+    font-family: 'Knewave', system-ui;
+    z-index: 9;
+    font-size: 42px;
+  }
+
+  .love-note {
+    max-width: 100%;
+  }
+
+  .note-text {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .letter-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
