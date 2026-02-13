@@ -48,6 +48,9 @@
 
 .note-content {
   @include note-content;
+  min-height: 161px;
+  max-height: 79px;
+  overflow-y: auto;
 }
 
 .note-text {
