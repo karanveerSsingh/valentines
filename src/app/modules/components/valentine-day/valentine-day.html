@@ -152,13 +152,6 @@
             <div class="love-emoji">😍💕🌹</div>
           </div>
 
-          <!-- Floating hearts -->
-          <div class="celebration-hearts">
-            @for (heart of Array(15); track $index) {
-              <div class="celebration-heart" [style.animation-delay.s]="$index * 0.2">💗</div>
-            }
-          </div>
-
           <!-- Back button -->
           <div class="celebration-actions">
             <div class="back-btn-celebration" (click)="goBackToLetter()">
