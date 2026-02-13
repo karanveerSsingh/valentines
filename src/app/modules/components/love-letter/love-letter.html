@@ -25,7 +25,7 @@
           <div class="hole"></div>
         </div>
       </div>
-      <div class="note-content">
+      <div class="note-content" #noteContent (scroll)="onUserScroll()">
         <p class="note-text">
           To the love of my life,<br />
           You make my life so meaningful<br />
@@ -44,9 +44,7 @@
     <!-- Action buttons -->
     <div class="letter-actions">
       <div class="click-me-letter" (click)="onCelebrate()">click Again Plzzzz!</div>
-      <div class="back-btn-letter" (click)="onGoBackToPhoto()">
-        <span>← Back</span>
-      </div>
+      <div class="back-btn-letter" (click)="onGoBackToPhoto()">← Back</div>
     </div>
   </div>
 </div>
