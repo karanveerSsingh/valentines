@@ -1,35 +1,189 @@
 <div class="valentine-day">
   <div class="valentine-container d-flex flex-column align-items-center justify-content-center">
     <div class="hearts">
-      <span *ngFor="let h of hearts"></span>
+      @for (h of hearts; track $index) {
+        <span></span>
+      }
     </div>
 
-    <div class="banner">
-      <div class="paper-heart">
-        <img
-          src="../../../../assets/paper-heart-paper-banner-party-banner-happy-valentine-s-day-love-card-happy-birthday-banner_190024-1439-removebg-preview.png"
-          alt=""
-        />
+    @if (showBanner) {
+      <div class="banner">
+        <div class="paper-heart">
+          <img
+            src="../../../../assets/paper-heart-paper-banner-party-banner-happy-valentine-s-day-love-card-happy-birthday-banner_190024-1439-removebg-preview.png"
+            alt=""
+          />
+        </div>
+        <div class="title-1">
+          <h1>Happy Valentine's Day</h1>
+          <p>My Love ❤️</p>
+        </div>
+        <div class="chocolate-box">
+          <img
+            src="../../../../assets/png-transparent-chocolate-chocolate-heart-shaped-red-removebg-preview.png"
+            alt=""
+          />
+        </div>
       </div>
-      <div class="title-1">
-        <h1>Happy Valentine’s Day</h1>
-        <p>My Love ❤️</p>
+    }
+
+    @if (!showBanner && !showLetter && !showCelebration) {
+      <!-- New content section that appears when banner is hidden -->
+      <div class="content-section">
+        <div class="valentine-content">
+          <!-- Floating hearts -->
+          <div class="floating-hearts">
+            @for (heart of [1, 2, 3, 4, 5, 6]; track $index) {
+              <div class="floating-heart">🤍</div>
+            }
+          </div>
+
+          <!-- Main title -->
+          <h1 class="forever-title">You + Me Forever</h1>
+
+          <!-- Photo frame with heart border -->
+          <div class="photo-frame">
+            <div class="heart-border">
+              @for (heart of Array(20); track $index) {
+                <span class="border-heart">❤️</span>
+              }
+            </div>
+            <div class="couple-photo">
+              <img src="../../../../assets/ourImg.jpeg" alt="Our Photo" />
+            </div>
+          </div>
+
+          <!-- Love message -->
+          <div class="love-message">
+            <p class="love-text">I love...</p>
+            <div class="love-details">
+              <p>1. your eyes</p>
+              <p>2. your smile</p>
+              <p>3. your laugh</p>
+              <p>4. your heart</p>
+            </div>
+          </div>
+
+          <!-- Click me and back button -->
+          <div class="action-buttons">
+            <div class="click-me" (click)="showLoveLetter()">click me!</div>
+            <div class="back-btn" (click)="goBackToBanner()">
+              <span>← Back to Banner</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="chocolate-box">
-        <img
-          src="../../../../assets/png-transparent-chocolate-chocolate-heart-shaped-red-removebg-preview.png"
-          alt=""
-        />
+    }
+
+    @if (showLetter && !showCelebration) {
+      <!-- Heart 2 Heart Love Letter Section -->
+      <div class="letter-section">
+        <!-- <span class="letter-heart-bg">
+          <img
+            src="../../../../assets/heart-garland-hand-drawn-border-frame-love-vector-removebg-preview.png"
+            alt=""
+          />
+        </span> -->
+        <div class="letter-content">
+          <!-- Floating hearts background -->
+          <div class="letter-hearts">
+            @for (heart of Array(10); track $index) {
+              <div class="letter-heart">💗</div>
+            }
+          </div>
+
+          <!-- Main title -->
+          <h1 class="heart-title">Heart 2 Heart ❤️</h1>
+
+          <!-- Love letter note -->
+          <div class="love-note">
+            <div class="note-header">
+              <div class="note-holes">
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+              </div>
+            </div>
+            <div class="note-content">
+              <p class="note-text">
+                To the love of my life,<br />
+                You make my life so meaningful<br />
+                and I am so lucky to have you<br />
+                as my valentine this year. I love<br />
+                you wholeheartedly and I Will<br />
+                try to love You More And More And <br />
+                More Baby Girl. I know I tell<br />
+                you this everyday but you are<br />
+                literally the most beautiful girl<br />
+                I know and I love you
+              </p>
+            </div>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="letter-actions">
+            <div class="click-me-letter" (click)="celebrate()">click Again Plzzzz!</div>
+            <div class="back-btn-letter" (click)="goBackToPhoto()">
+              <span>← Back</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div>
+    }
+
+    @if (showCelebration) {
+      <!-- Celebration Section with Confetti -->
+      <div class="celebration-section">
+        <!-- Confetti Animation -->
+
+        <!-- Main celebration content -->
+        <div class="celebration-content">
+          <!-- Big heart animation -->
+          <div class="big-heart-container">
+            <div class="big-heart">💖</div>
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring ring-2"></div>
+          </div>
+
+          <!-- I Love You Message -->
+          <div class="love-declaration">
+            <h1 class="love-title">I Love You</h1>
+            <h2 class="love-name">Timi Bajja</h2>
+            <div class="love-emoji">😍💕🌹</div>
+          </div>
+
+          <!-- Floating hearts -->
+          <div class="celebration-hearts">
+            @for (heart of Array(15); track $index) {
+              <div class="celebration-heart" [style.animation-delay.s]="$index * 0.2">💗</div>
+            }
+          </div>
+
+          <!-- Back button -->
+          <div class="celebration-actions">
+            <div class="back-btn-celebration" (click)="goBackToLetter()">
+              <span>← Back to Letter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (showBanner) {
       <div>
-        <img
-          src="../../../../assets/325df4a473a66bad8fc759ca572636d1-removebg-preview.png"
-          alt=""
-        />
+        <div>
+          <img
+            src="../../../../assets/325df4a473a66bad8fc759ca572636d1-removebg-preview.png"
+            alt=""
+          />
+        </div>
+        <div class="arrow-btn" (click)="scrollToContent()">
+          <img
+            src="../../../../assets/5a80743c-20d7-4952-b99b-efad362de16a-removebg-preview.png"
+            alt=""
+          />
+        </div>
       </div>
-      <div></div>
-    </div>
+    }
   </div>
 </div>

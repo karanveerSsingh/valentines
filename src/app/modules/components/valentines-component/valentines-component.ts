@@ -102,9 +102,10 @@ export class ValentinesComponent implements OnInit {
   }
 
   playSound() {
-    const audio = new Audio(
-      '../../../../assets/tum-mile-tum-mile-original-motion-picturetrack-320-kbps_BHj8W2oK.mp3',
-    );
+    // const audio = new Audio(
+    //   '../../../../assets/tum-mile-tum-mile-original-motion-picturetrack-320-kbps_BHj8W2oK.mp3',
+    // );
+    const audio = new Audio('../../../../assets/mere-bina-pendujattcomse-1_4ospvCii.mp3');
     audio.play();
     this.isYesClicked = true;
   }
